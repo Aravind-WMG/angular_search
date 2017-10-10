@@ -1,0 +1,12 @@
+<section class="search-wrapper">
+    <h1>
+        Angular 2 Search !
+      </h1>
+      <ul>
+        <input [(ngModel)]="searchString" placeholder="Search for news">
+        <li *ngFor="let n of data1 | FilterPipe: searchString" (click)="nameclicked(n)">
+            <a [routerLink]="['/artistdetail',n.id,n.title]" routerLinkActive="active">{{n.title}}</a>
+        </li>
+      </ul>
+</section>
+<router-outlet></router-outlet>
